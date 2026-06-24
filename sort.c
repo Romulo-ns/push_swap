@@ -6,7 +6,7 @@
 /*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/24 15:08:06 by willpere         ###   ########.fr       */
+/*   Updated: 2026/06/24 16:27:40 by willpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	select_sort(t_stack **stack_a, t_stack **stack_b)
 			sa(stack_a);
 		else if (size == 3)
 			sort_three(stack_a);
-		else if (size == 5)
+		else if (size == 5 || size == 4)
 			sort_five(stack_a, stack_b);
         return ;
     }
