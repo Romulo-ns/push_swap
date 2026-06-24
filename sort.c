@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/24 19:25:49 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/24 22:14:09 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sort_three(t_stack **stack_a)
 {	
 	int	size = stack_size(*stack_a);
-	
+	printf("")
 	set_rank(stack_a);
 	if ((*stack_a)->rank == size)
 		ra(stack_a);
