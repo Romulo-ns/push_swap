@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/24 13:44:28 by willpere         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:25:38 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void		set_rank(t_stack **stack);
 void		select_sort(t_stack **stack_a, t_stack **stack_b);
 t_stack		*stack_last(t_stack *stack);		
 void		view_stack(t_stack *stack);
+void		insertion(t_stack **stack_a, t_stack **stack_b);
+void		sort_three(t_stack **stack_a);
 
 
 #endif
