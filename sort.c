@@ -6,20 +6,33 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/24 22:14:09 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/25 11:29:58 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int find_highest_rank(t_stack *stack_a)
+{
+	int highest_rank;
+
+	highest_rank = stack_a->rank;
+	while (stack_a)
+	{
+		if (stack_a->rank > highest_rank)
+			highest_rank = stack_a->rank;
+		stack_a = stack_a->next;
+	}
+	return (highest_rank);
+}
+
 void	sort_three(t_stack **stack_a)
 {	
-	int	size = stack_size(*stack_a);
-	printf("")
-	set_rank(stack_a);
-	if ((*stack_a)->rank == size)
+	int last_rank = find_highest_rank(*stack_a);
+	
+	if ((*stack_a)->rank == last_rank)
 		ra(stack_a);
-	if ((*stack_a)->next->rank == size)
+	if ((*stack_a)->next->rank == last_rank)
 		rra(stack_a);
 	if ((*stack_a)->rank > (*stack_a)->next->rank)
 		sa(stack_a);
@@ -66,7 +79,6 @@ void	select_sort(t_stack **stack_a, t_stack **stack_b)
 	int		size;
 	
 	size = stack_size(*stack_a);
-	set_rank(stack_a);
 	disorder = get_disorder(*stack_a);
 	
 	if (disorder == 0)

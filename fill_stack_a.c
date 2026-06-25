@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 09:47:00 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/18 11:20:44 by willpere         ###   ########.fr       */
+/*   Updated: 2026/06/25 10:41:12 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void	fill_stack_a(t_stack **stack_a, int argc, char **argv)
 		i++;
 	}
 	free_split(args_matrix, elements);
+	set_rank(stack_a);
 }
