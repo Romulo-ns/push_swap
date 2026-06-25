@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 10:29:38 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/24 13:25:16 by willpere         ###   ########.fr       */
+/*   Updated: 2026/06/24 20:01:40 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,12 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	fill_stack_a(&stack_a, argc, argv);
+	printf("fill_stack:\n");
 	view_stack(stack_a);
 	select_sort(&stack_a, &stack_b);
-	printf("Stack B->");
+	printf("Stack B->\n");
 	view_stack(stack_b);
-	printf("Stack A ->");
+	printf("Stack A->\n");
 	view_stack(stack_a);
 	free_stack(&stack_a);
 	return (0);
