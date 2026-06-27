@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 15:25:27 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 16:28:12 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,12 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 }
 void	select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
-	float	disorder;
 	int		size;
 	
 	size = stack_size(*stack_a);
-	disorder = get_disorder(*stack_a);
+	bench->disorder = get_disorder(*stack_a);
 	
-	if (disorder == 0)
+	if (bench->disorder == 0)
 		return ;
 	if (size <= 5)
 	{
