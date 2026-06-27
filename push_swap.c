@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 10:29:38 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/27 14:50:41 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:32:21 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int	main(int argc, char **argv)
 	printf("Stack A->\n");
 	view_stack(stack_a);
 	free_stack(&stack_a);
+	print_benchmark(&bench);
 	return (0);
 }

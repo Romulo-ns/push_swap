@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 15:26:53 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:36:27 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int			find_highest_rank(t_stack *stack_a);
 void		putstr_fd(char *str, int fd);
 void		putnbr_fd(int n, int fd);
 void		bench_initiate(t_bench *bench);
-
+void		print_benchmark(t_bench *bench);
+void		print_benchmark_moves(t_bench *bench);
 
 #endif
