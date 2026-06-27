@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 11:26:14 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 14:58:52 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:26:57 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	print_double_fd(double dis);
 void    print_benchmark_moves(t_bench *bench);
 
-void	ft_bench_initiate(t_bench *bench)
+void	bench_initiate(t_bench *bench)
 {
     if (!bench)
 		return ;

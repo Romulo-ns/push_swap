@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:24:11 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 14:45:10 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:25:50 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
         pb(stack_a, stack_b, bench);
         size_a--;
     }
-    sort_three(stack_a);
+    sort_three(stack_a, bench);
     while (*stack_b)
     {
         while (!can_ra(*stack_a, (*stack_b)->rank))
-            ra(stack_a);
+            ra(stack_a, bench);
 
         pa(stack_a, stack_b, bench);
     }
     while ((*stack_a)->rank != 1)
-        ra(stack_a);
+        ra(stack_a, bench);
 }

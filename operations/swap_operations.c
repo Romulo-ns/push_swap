@@ -6,13 +6,13 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 14:37:06 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/16 19:05:53 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:20:26 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	swap(t_stack **stack)
+static void	swap(t_stack **stack, t_bench *bench)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -28,23 +28,31 @@ static void	swap(t_stack **stack)
 	second->next = first;
 	first->prev = second;
 	*stack = second;
+	if (bench)
+		bench->total_ops++;
 }
 
-void	sa(t_stack **stack_a)
+void	sa(t_stack **stack_a, t_bench *bench)
 {
-	swap(stack_a);
+	swap(stack_a, bench);
 	write(1, "sa\n", 3);
+		if (bench)
+		bench->sa++;
 }
 
-void	sb(t_stack **stack_b)
+void	sb(t_stack **stack_b, t_bench *bench)
 {
-	swap(stack_b);
+	swap(stack_b, bench);
 	write(1, "sb\n", 3);
+		if (bench)
+		bench->sb++;
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
-	swap(stack_a);
-	swap(stack_b);
+	swap(stack_a, bench);
+	swap(stack_b, bench);
 	write(1, "ss\n", 3);
+		if (bench)
+		bench->ss++;
 }

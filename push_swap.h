@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 14:54:19 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:26:53 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,23 +70,23 @@ char		**parse_arguments(int argc, char **argv);
 void		fill_stack_a(t_stack **stack_a, int argc, char **argv);
 void		free_split(char **result, size_t size);
 void		free_stack(t_stack **stack_a);
-void		sa(t_stack **stack_a);
-void		sb(t_stack **stack_b);
-void		ss(t_stack **stack_a, t_stack **stack_b);
+void		sa(t_stack **stack_a, t_bench *bench);
+void		sb(t_stack **stack_b, t_bench *bench);
+void		ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void		pa(t_stack **a, t_stack **b, t_bench *bench);
 void		pb(t_stack **a, t_stack **b, t_bench *bench);
-void		ra(t_stack **a);
-void		rb(t_stack **b);
-void		rr(t_stack **a, t_stack **b);
-void		rra(t_stack **stack);
-void		rrb(t_stack **b);
-void		rrr(t_stack **a, t_stack **b);
+void		ra(t_stack **a, t_bench *bench);
+void		rb(t_stack **b, t_bench *bench);
+void		rr(t_stack **a, t_stack **b, t_bench *bench);
+void		rra(t_stack **stack, t_bench *bench);
+void		rrb(t_stack **b, t_bench *bench);
+void		rrr(t_stack **a, t_stack **b, t_bench *bench);
 void		set_rank(t_stack **stack);
 void		select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 t_stack		*stack_last(t_stack *stack);		
 void		view_stack(t_stack *stack);
 void		insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
-void		sort_three(t_stack **stack_a);
+void		sort_three(t_stack **stack_a, t_bench *bench);
 int			find_highest_rank(t_stack *stack_a);
 void		putstr_fd(char *str, int fd);
 void		putnbr_fd(int n, int fd);
