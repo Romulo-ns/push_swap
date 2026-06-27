@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arguments.c                                  :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 16:48:09 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/25 14:12:20 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/06/27 11:44:57 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/06/27 14:50:07 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	**parse_arguments(int argc, char **argv)
+void	putstr_fd(char *str, int fd)
 {
-	char	*args;
-	char	**matrix;
-	int		i;
-	int		j;
-	int		k;
-
-	args = malloc(total_length(argc, argv) + 1);
-	if (!args)
-		return (NULL);
-	i = 1;
-	k = 0;
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j])
-			args[k++] = argv[i][j++];
-		if (i < argc - 1)
-			args[k++] = ' ';
-		i++;
-	}
-	args[k] = '\0';
-	matrix = ft_split(args, ' ');
-	free(args);
-	return (matrix);
+	while (*str)
+		write(fd, &*(str++), 1);
 }

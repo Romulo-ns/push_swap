@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arguments.c                                  :+:      :+:    :+:   */
+/*   aaaaaa.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 16:48:09 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/25 14:12:20 by romdo-na         ###   ########.fr       */
+/*   Created: 2026/06/27 14:53:34 by romdo-na          #+#    #+#             */
+/*   Updated: 2026/06/27 14:54:07 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	**parse_arguments(int argc, char **argv)
+void	putnbr_fd(int n, int fd)
 {
-	char	*args;
-	char	**matrix;
-	int		i;
-	int		j;
-	int		k;
+	long	nbr;
 
-	args = malloc(total_length(argc, argv) + 1);
-	if (!args)
-		return (NULL);
-	i = 1;
-	k = 0;
-	while (i < argc)
+	nbr = n;
+	if (nbr < 0)
 	{
-		j = 0;
-		while (argv[i][j])
-			args[k++] = argv[i][j++];
-		if (i < argc - 1)
-			args[k++] = ' ';
-		i++;
+		write (fd, "-", 1);
+		nbr = -(nbr);
 	}
-	args[k] = '\0';
-	matrix = ft_split(args, ' ');
-	free(args);
-	return (matrix);
+	if (nbr > 9)
+		ft_putnbr_fd (nbr / 10, fd);
+	write (fd, &"0123456789"[nbr % 10], 1);
 }

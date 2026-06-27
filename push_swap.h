@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/25 11:30:24 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 15:36:27 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <limits.h>
 # include "libft/libft.h"
 
+// Macro definition
+
+# define BENCH_MARK "--bench"
+# define STRA_SIMPLE "--simple"
+# define STRA_MEDIUM "--medium"
+# define STRA_COMPLEX "--complex"
+# define STRA_ADAPTIVE "--adaptive"
+
 typedef struct s_stack
 {
 	int				value;
@@ -28,9 +36,11 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
+
 typedef struct s_bench
 {
-	float	disorder;
+	int		active;
+	double	disorder;
 	char	*strategy;
 	int		total_ops;
 	int 	sa;
@@ -60,25 +70,28 @@ char		**parse_arguments(int argc, char **argv);
 void		fill_stack_a(t_stack **stack_a, int argc, char **argv);
 void		free_split(char **result, size_t size);
 void		free_stack(t_stack **stack_a);
-void		sa(t_stack **stack_a);
-void		sb(t_stack **stack_b);
-void		ss(t_stack **stack_a, t_stack **stack_b);
-void		pa(t_stack **a, t_stack **b);
-void		pb(t_stack **a, t_stack **b);
-void		ra(t_stack **a);
-void		rb(t_stack **b);
-void		rr(t_stack **a, t_stack **b);
-void		rra(t_stack **stack);
-void		rrb(t_stack **b);
-void		rrr(t_stack **a, t_stack **b);
-void		start(t_bench **movements);
+void		sa(t_stack **stack_a, t_bench *bench);
+void		sb(t_stack **stack_b, t_bench *bench);
+void		ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void		pa(t_stack **a, t_stack **b, t_bench *bench);
+void		pb(t_stack **a, t_stack **b, t_bench *bench);
+void		ra(t_stack **a, t_bench *bench);
+void		rb(t_stack **b, t_bench *bench);
+void		rr(t_stack **a, t_stack **b, t_bench *bench);
+void		rra(t_stack **stack, t_bench *bench);
+void		rrb(t_stack **b, t_bench *bench);
+void		rrr(t_stack **a, t_stack **b, t_bench *bench);
 void		set_rank(t_stack **stack);
-void		select_sort(t_stack **stack_a, t_stack **stack_b);
+void		select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 t_stack		*stack_last(t_stack *stack);		
 void		view_stack(t_stack *stack);
-void		insertion(t_stack **stack_a, t_stack **stack_b);
-void		sort_three(t_stack **stack_a);
+void		insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void		sort_three(t_stack **stack_a, t_bench *bench);
 int			find_highest_rank(t_stack *stack_a);
-
+void		putstr_fd(char *str, int fd);
+void		putnbr_fd(int n, int fd);
+void		bench_initiate(t_bench *bench);
+void		print_benchmark(t_bench *bench);
+void		print_benchmark_moves(t_bench *bench);
 
 #endif
