@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 12:28:18 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 14:54:19 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void		free_stack(t_stack **stack_a);
 void		sa(t_stack **stack_a);
 void		sb(t_stack **stack_b);
 void		ss(t_stack **stack_a, t_stack **stack_b);
-void		pa(t_stack **a, t_stack **b);
-void		pb(t_stack **a, t_stack **b);
+void		pa(t_stack **a, t_stack **b, t_bench *bench);
+void		pb(t_stack **a, t_stack **b, t_bench *bench);
 void		ra(t_stack **a);
 void		rb(t_stack **b);
 void		rr(t_stack **a, t_stack **b);
@@ -82,13 +82,15 @@ void		rra(t_stack **stack);
 void		rrb(t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
 void		set_rank(t_stack **stack);
-void		select_sort(t_stack **stack_a, t_stack **stack_b);
+void		select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 t_stack		*stack_last(t_stack *stack);		
 void		view_stack(t_stack *stack);
-void		insertion(t_stack **stack_a, t_stack **stack_b);
+void		insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 void		sort_three(t_stack **stack_a);
 int			find_highest_rank(t_stack *stack_a);
-void		ft_putstr_fd(char *str, int fd);
+void		putstr_fd(char *str, int fd);
+void		putnbr_fd(int n, int fd);
+void		bench_initiate(t_bench *bench);
 
 
 #endif

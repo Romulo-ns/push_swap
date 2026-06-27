@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/25 14:08:30 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 14:48:06 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	sort_three(t_stack **stack_a)
 		sa(stack_a);
 }
 
-void	push_to_b_by_rank(t_stack **stack_a, t_stack **stack_b, int stack_rank)
+void	push_to_b_by_rank(t_stack **stack_a, t_stack **stack_b, int stack_rank, t_bench *bench)
 {
 	t_stack *top_stack;
 	int		pos;
@@ -60,19 +60,19 @@ void	push_to_b_by_rank(t_stack **stack_a, t_stack **stack_b, int stack_rank)
 		else
 			rra(stack_a);
 	}
-	pb(stack_a, stack_b);
+	pb(stack_a, stack_b, bench);
 }
 
-void	sort_five(t_stack **stack_a, t_stack **stack_b)
+void	sort_five(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
-	push_to_b_by_rank(stack_a, stack_b, 1);
-	push_to_b_by_rank(stack_a, stack_b, 2);
+	push_to_b_by_rank(stack_a, stack_b, 1, bench);
+	push_to_b_by_rank(stack_a, stack_b, 2, bench);
 	sort_three(stack_a);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
+	pa(stack_a, stack_b, bench);
+	pa(stack_a, stack_b, bench);
 
 }
-void	select_sort(t_stack **stack_a, t_stack **stack_b)
+void	select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
 	float	disorder;
 	int		size;
@@ -89,12 +89,12 @@ void	select_sort(t_stack **stack_a, t_stack **stack_b)
 		else if (size == 3)
 			sort_three(stack_a);
 		else if (size == 5 || size == 4)
-			sort_five(stack_a, stack_b);
+			sort_five(stack_a, stack_b, bench);
         return ;
     }
 	else
 	{
-		insertion(stack_a, stack_b);
+		insertion(stack_a, stack_b, bench);
         return ;
 	}
 }
