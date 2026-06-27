@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/25 11:30:24 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 12:28:18 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <limits.h>
 # include "libft/libft.h"
 
+// Macro definition
+
+# define BENCH_MARK "--bench"
+# define STRA_SIMPLE "--simple"
+# define STRA_MEDIUM "--medium"
+# define STRA_COMPLEX "--complex"
+# define STRA_ADAPTIVE "--adaptive"
+
 typedef struct s_stack
 {
 	int				value;
@@ -28,9 +36,11 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
+
 typedef struct s_bench
 {
-	float	disorder;
+	int		active;
+	double	disorder;
 	char	*strategy;
 	int		total_ops;
 	int 	sa;
@@ -71,7 +81,6 @@ void		rr(t_stack **a, t_stack **b);
 void		rra(t_stack **stack);
 void		rrb(t_stack **b);
 void		rrr(t_stack **a, t_stack **b);
-void		start(t_bench **movements);
 void		set_rank(t_stack **stack);
 void		select_sort(t_stack **stack_a, t_stack **stack_b);
 t_stack		*stack_last(t_stack *stack);		
@@ -79,6 +88,7 @@ void		view_stack(t_stack *stack);
 void		insertion(t_stack **stack_a, t_stack **stack_b);
 void		sort_three(t_stack **stack_a);
 int			find_highest_rank(t_stack *stack_a);
+void		ft_putstr_fd(char *str, int fd);
 
 
 #endif

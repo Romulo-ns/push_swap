@@ -6,7 +6,7 @@
 #    By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/05 10:41:02 by willpere          #+#    #+#              #
-#    Updated: 2026/06/24 18:21:01 by romdo-na         ###   ########.fr        #
+#    Updated: 2026/06/27 11:47:08 by romdo-na         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS = push_swap.c push_swap_utils.c parsing/parse_arguments.c \
 	parsing/check_duplicate.c parsing/is_valid_number.c \
 	operations/push_operations.c operations/reverse_rotate_operations.c \
 	operations/rotate_operations.c operations/swap_operations.c \
-	disorder.c set_rank.c sort.c stack_utils.c simple_algorithm.c
+	disorder.c set_rank.c sort.c stack_utils.c simple_algorithm.c \
+	benchmark.c my_lib/ft_putstr_fd.c
 		
 OBJS = $(SRCS:.c=.o)
 

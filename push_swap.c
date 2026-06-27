@@ -6,26 +6,11 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 10:29:38 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/24 20:01:40 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/27 11:26:57 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	start(t_bench **movements)
-{
-	(*movements)->pa = 0;
-	(*movements)->pb = 0;
-	(*movements)->sa = 0;
-	(*movements)->sb = 0;
-	(*movements)->ss = 0;
-	(*movements)->ra = 0;
-	(*movements)->rb = 0;
-	(*movements)->rr = 0;
-	(*movements)->rra = 0;
-	(*movements)->rrb = 0;
-	(*movements)->rrr = 0;
-}
 
 void	view_stack(t_stack *stack)
 {	
