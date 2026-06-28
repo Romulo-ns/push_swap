@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 16:28:12 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/28 15:51:34 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,16 @@ void	select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 	{
 		insertion(stack_a, stack_b, bench);
         return ;
+	}
+}
+
+void	select_strategy(int argc, char **argv, t_bench *bench)
+{
+	printf("passou aqui, argc %d\n", argc);
+	printf("passou aqui, argv %c\n", argv[1][0]);
+
+	if (bench && (argv[1][0] == '-' && argv[1][1] == '-'))
+	{
+		printf("passou\n");
 	}
 }

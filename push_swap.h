@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 16:17:44 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/28 15:28:07 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ void		putnbr_fd(int n, int fd);
 void		bench_initiate(t_bench *bench);
 void		print_benchmark(t_bench *bench);
 void		print_benchmark_moves(t_bench *bench);
+void		select_strategy(int argc, char **argv, t_bench *bench);
+
 
 #endif
