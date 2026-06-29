@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 09:47:00 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/25 10:41:12 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:30:20 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	clear_all(char **args_matrix, int elements, t_stack **stack_a)
 	exit(1);
 }
 
-void	fill_stack_a(t_stack **stack_a, int argc, char **argv)
+void	fill_stack_a(t_stack **stack_a, int argc, char **argv, t_bench *bench)
 {
 	char		**args_matrix;
 	int			elements;
 	int			i;
 	long long	number;
 
-	args_matrix = parse_arguments(argc, argv);
+	args_matrix = parse_arguments(argc, argv, bench);
 	if (!args_matrix)
 		return ;
 	elements = count_elements(args_matrix);

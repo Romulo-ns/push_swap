@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/29 14:00:03 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:45:30 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_stack
 typedef struct s_bench
 {
 	int		active;
+	int		print_bench;
 	double	disorder;
 	char	*strategy;
 	int		total_ops;
@@ -66,8 +67,8 @@ int			stack_add_last(t_stack **stack_a, int number);
 int			stack_size(t_stack *stack);
 float		get_disorder(t_stack *stack);
 long long	push_swap_atoi(const char *nptr);
-char		**parse_arguments(int argc, char **argv);
-void		fill_stack_a(t_stack **stack_a, int argc, char **argv);
+char		**parse_arguments(int argc, char **argv, t_bench *bench);
+void		fill_stack_a(t_stack **stack_a, int argc, char **argv, t_bench *bench);
 void		free_split(char **result, size_t size);
 void		free_stack(t_stack **stack_a);
 void		sa(t_stack **stack_a, t_bench *bench);

@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/29 14:27:56 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:45:30 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 	sort_three(stack_a, bench);
 	pa(stack_a, stack_b, bench);
 	pa(stack_a, stack_b, bench);
-
 }
 void	select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
@@ -102,7 +101,8 @@ void	select_strategy(int argc, char **argv, t_bench *bench)
 {
 	if (strcmp((argv)[1], BENCH_MARK) == 0)
 	{
-		bench->active = 1;
+		bench->active += 1;
+		bench->print_bench = 1;
 		(argv)++;
 		(argc)--;
 		if (argc < 2)
@@ -113,6 +113,7 @@ void	select_strategy(int argc, char **argv, t_bench *bench)
 	}
 	if (bench && (argv[1][0] == '-' && argv[1][1] == '-'))
 	{
+		bench->active += 1;
 		if (strcmp((argv)[1], STRA_SIMPLE) == 0)
 			bench->strategy = STRA_SIMPLE;
 		else if (strcmp((argv)[1], STRA_MEDIUM) == 0)
