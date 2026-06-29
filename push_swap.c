@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 10:29:38 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/28 15:39:01 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/29 14:24:33 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int	main(int argc, char **argv)
 		return (0);
 	bench_initiate(&bench);
 	select_strategy(argc, argv, &bench);
+
+	printf("select_strategy:%s\n", (&bench)->strategy);
+	printf("bench->active:%d\n", (&bench)->active);
+
 	fill_stack_a(&stack_a, argc, argv);
 
 	printf("fill_stack:\n");

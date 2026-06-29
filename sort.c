@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/28 15:51:34 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/29 14:27:56 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,34 @@ void	select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 
 void	select_strategy(int argc, char **argv, t_bench *bench)
 {
-	printf("passou aqui, argc %d\n", argc);
-	printf("passou aqui, argv %c\n", argv[1][0]);
-
+	if (strcmp((argv)[1], BENCH_MARK) == 0)
+	{
+		bench->active = 1;
+		(argv)++;
+		(argc)--;
+		if (argc < 2)
+		{
+			putstr_fd("Error\n", 2);
+			exit(1);
+		}
+	}
 	if (bench && (argv[1][0] == '-' && argv[1][1] == '-'))
 	{
-		printf("passou\n");
+		if (strcmp((argv)[1], STRA_SIMPLE) == 0)
+			bench->strategy = STRA_SIMPLE;
+		else if (strcmp((argv)[1], STRA_MEDIUM) == 0)
+			bench->strategy = STRA_MEDIUM;
+		else if (strcmp((argv)[1], STRA_COMPLEX) == 0)
+			bench->strategy = STRA_COMPLEX;
+		else if (strcmp((argv)[1], "") != 0
+			&& strcmp((argv)[1], STRA_ADAPTIVE) != 0)
+				bench->strategy = "Invalid";
+		else
+			bench->strategy = STRA_ADAPTIVE;
+		if (strcmp(bench->strategy, "Invalid") != 0)
+		{
+			(argv)++;
+			(argc)--;
+		}
 	}
 }
