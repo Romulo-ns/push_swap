@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:24:11 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/30 17:48:32 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/30 20:01:15 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,23 @@ void rotate_to_position(t_stack **stack_a, int position, t_bench *bench)
 	}
 }
 
-int	find_insert_position(t_stack *stack_a, int rank)
+int	find_insert_position(t_stack *stack_a, int rank_b)
 {
-	t_stack	*current;
+	t_stack	*current_a;
 	int		position;
 
-	current = stack_a;
+	current_a = stack_a;
 	position = 0;
-	while (current->next)
+	while (current_a->next)
 	{
-		if (current->rank > current->next->rank)
+		if (current_a->rank > current_a->next->rank)
 		{
-			if (rank > current->rank || rank < current->next->rank)
+			if (rank_b > current_a->rank || rank_b < current_a->next->rank)
 				return (position + 1);
 		}
-		else if (current->rank < rank && rank < current->next->rank)
+		else if (current_a->rank < rank_b && rank_b < current_a->next->rank)
 			return (position + 1);
-		current = current->next;
+		current_a = current_a->next;
 		position++;
 	}
 	return (0);
