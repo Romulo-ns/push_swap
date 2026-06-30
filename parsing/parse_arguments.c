@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:09 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/29 16:32:25 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/30 19:28:52 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	**parse_arguments(int argc, char **argv, t_bench *bench)
 	
 	args = malloc(total_length(argc, argv) + 1 - bench->active);
 	if (!args)
-	return (NULL);
+		return (NULL);
 	i = 1;
 	k = 0;
 	if (bench)
