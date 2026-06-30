@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 10:29:38 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/27 15:32:21 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:46:06 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,18 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	
 	if (argc < 2)
 		return (0);
 	bench_initiate(&bench);
-	fill_stack_a(&stack_a, argc, argv);
+	select_strategy(argc, argv, &bench);
+
+	printf("select_strategy:%s\n", (&bench)->strategy);
+	printf("bench->active:%d\n", (&bench)->active);
+	
+	fill_stack_a(&stack_a, argc, argv, &bench);
+	printf("argc:%d, argv:%s\n", argc, argv[1]);
+
 	printf("fill_stack:\n");
 	view_stack(stack_a);
 	select_sort(&stack_a, &stack_b, &bench);
@@ -46,6 +54,8 @@ int	main(int argc, char **argv)
 	printf("Stack A->\n");
 	view_stack(stack_a);
 	free_stack(&stack_a);
-	print_benchmark(&bench);
+	if ((&bench)->print_bench != 0)print_benchmark(&bench);
+
+	
 	return (0);
 }

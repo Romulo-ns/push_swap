@@ -6,11 +6,11 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:24:11 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 15:25:50 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/30 16:31:00 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 // • Insertion sort adaptation
 

@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/27 16:17:44 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/30 15:21:33 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
-
 typedef struct s_bench
 {
 	int		active;
+	int		print_bench;
 	double	disorder;
 	char	*strategy;
 	int		total_ops;
@@ -54,7 +54,7 @@ typedef struct s_bench
 	int		rra;
 	int		rrb;
 	int		rrr;
-	
+
 }	t_bench;
 
 int			main(int argc, char **argv);
@@ -66,8 +66,8 @@ int			stack_add_last(t_stack **stack_a, int number);
 int			stack_size(t_stack *stack);
 float		get_disorder(t_stack *stack);
 long long	push_swap_atoi(const char *nptr);
-char		**parse_arguments(int argc, char **argv);
-void		fill_stack_a(t_stack **stack_a, int argc, char **argv);
+char		**parse_arguments(int argc, char **argv, t_bench *bench);
+void		fill_stack_a(t_stack **stack_a, int argc, char **argv, t_bench *bench);
 void		free_split(char **result, size_t size);
 void		free_stack(t_stack **stack_a);
 void		sa(t_stack **stack_a, t_bench *bench);
@@ -85,13 +85,20 @@ void		set_rank(t_stack **stack);
 void		select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 t_stack		*stack_last(t_stack *stack);		
 void		view_stack(t_stack *stack);
+
 void		insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void		bucket(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void		radix(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+
 void		sort_three(t_stack **stack_a, t_bench *bench);
 int			find_highest_rank(t_stack *stack_a);
 void		putstr_fd(char *str, int fd);
 void		putnbr_fd(int n, int fd);
+int			strcmp(const char *s1, const char *s2);
 void		bench_initiate(t_bench *bench);
 void		print_benchmark(t_bench *bench);
 void		print_benchmark_moves(t_bench *bench);
+void		select_strategy(int argc, char **argv, t_bench *bench);
+
 
 #endif

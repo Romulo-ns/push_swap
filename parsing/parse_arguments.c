@@ -6,25 +6,27 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:09 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/25 14:12:20 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/29 16:32:25 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	**parse_arguments(int argc, char **argv)
+char	**parse_arguments(int argc, char **argv, t_bench *bench)
 {
 	char	*args;
 	char	**matrix;
 	int		i;
 	int		j;
 	int		k;
-
-	args = malloc(total_length(argc, argv) + 1);
+	
+	args = malloc(total_length(argc, argv) + 1 - bench->active);
 	if (!args)
-		return (NULL);
+	return (NULL);
 	i = 1;
 	k = 0;
+	if (bench)
+		i += bench->active;
 	while (i < argc)
 	{
 		j = 0;
