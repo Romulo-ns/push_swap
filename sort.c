@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 17:26:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/29 16:45:30 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/30 16:28:33 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,22 @@ void	select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
     }
 	else
 	{
-		insertion(stack_a, stack_b, bench);
-        return ;
+		if (strcmp(bench->strategy, STRA_SIMPLE) == 0)
+			insertion(stack_a, stack_b, bench);
+		else if (strcmp(bench->strategy, STRA_MEDIUM) == 0)
+			bucket(stack_a, stack_b, bench);
+		else if (strcmp(bench->strategy, STRA_COMPLEX) == 0)
+			radix(stack_a, stack_b, bench);
+		else
+		{
+			if (bench->disorder <= 20.00)
+				insertion(stack_a, stack_b, bench);
+			else if (bench->disorder >= 50.00)
+				radix(stack_a, stack_b, bench);
+			else
+				bucket(stack_a, stack_b, bench);
+			return ;
+		}
 	}
 }
 

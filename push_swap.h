@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/29 16:45:30 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/06/30 15:21:33 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
-
 typedef struct s_bench
 {
 	int		active;
@@ -55,7 +54,7 @@ typedef struct s_bench
 	int		rra;
 	int		rrb;
 	int		rrr;
-	
+
 }	t_bench;
 
 int			main(int argc, char **argv);
@@ -86,7 +85,11 @@ void		set_rank(t_stack **stack);
 void		select_sort(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
 t_stack		*stack_last(t_stack *stack);		
 void		view_stack(t_stack *stack);
+
 void		insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void		bucket(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+void		radix(t_stack **stack_a, t_stack **stack_b, t_bench *bench);
+
 void		sort_three(t_stack **stack_a, t_bench *bench);
 int			find_highest_rank(t_stack *stack_a);
 void		putstr_fd(char *str, int fd);
