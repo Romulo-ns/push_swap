@@ -6,30 +6,39 @@
 /*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 15:14:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/07/02 20:02:18 by willpere         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:02:14 by willpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
- void	return_to_a(t_stack **stack_a, t_stack **stack_b, t_bench *bench, int size)
- {
-	int	target;
-	int pos;
-	int mid;
-	t_stack *current_b;
-	
+int	find_position(t_stack **stack_b, int target)
+{
+	int		pos;
+	t_stack	*current_b;
+
+	pos = 0;
+	current_b = *stack_b;
+	while (current_b->rank != target)
+	{
+		current_b = current_b->next;
+		pos++;
+	}
+	return (pos);
+}
+
+void	return_to_a(t_stack **stack_a, t_stack **stack_b,
+	t_bench *bench, int size)
+{
+	int		target;
+	int		pos;
+	int		mid;
+
 	target = size;
 	while (*stack_b)
 	{
-		pos = 0;
-		current_b = *stack_b;
+		pos = find_position(stack_b, target);
 		mid = stack_size(*stack_b) / 2;
-		while (current_b->rank != target)
-		{
-			current_b = current_b->next;
-			pos++;
-		}
 		while ((*stack_b)->rank != target)
 		{
 			if (pos <= mid)
@@ -40,15 +49,15 @@
 		pa(stack_a, stack_b, bench);
 		target--;
 	}
-} 
+}
 
- void	bucket(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
+void	bucket(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
-	int size;
-	int chunk_size;
-	int limit;
-	int pushed;
-	
+	int	size;
+	int	chunk_size;
+	int	limit;
+	int	pushed;
+
 	size = stack_size(*stack_a);
 	chunk_size = size / 5;
 	limit = chunk_size;
@@ -66,4 +75,4 @@
 			ra(stack_a, bench);
 	}
 	return_to_a(stack_a, stack_b, bench, size);
-} 
+}
