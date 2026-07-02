@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/30 19:29:40 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:57:13 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ typedef struct s_bench
 	double	disorder;
 	char	*strategy;
 	int		total_ops;
-	int 	sa;
+	int		sa;
 	int		sb;
 	int		ss;
 	int		pa;
 	int		pb;
 	int		ra;
 	int		rb;
-	int 	rr;
+	int		rr;
 	int		rra;
 	int		rrb;
 	int		rrr;
@@ -67,7 +67,8 @@ int			stack_size(t_stack *stack);
 float		get_disorder(t_stack *stack);
 long long	push_swap_atoi(const char *nptr);
 char		**parse_arguments(int argc, char **argv, t_bench *bench);
-void		fill_stack_a(t_stack **stack_a, int argc, char **argv, t_bench *bench);
+void		fill_stack_a(t_stack **stack_a, int argc, char **argv,
+				t_bench *bench);
 void		free_split(char **result, size_t size);
 void		free_stack(t_stack **stack_a);
 void		sa(t_stack **stack_a, t_bench *bench);
@@ -99,6 +100,8 @@ void		bench_initiate(t_bench *bench);
 void		print_benchmark(t_bench *bench);
 void		print_benchmark_moves(t_bench *bench);
 void		select_strategy(int argc, char **argv, t_bench *bench);
-
+void		push_to_b_by_rank(t_stack **stack_a, t_stack **stack_b,
+				int stack_rank, t_bench *bench);
+void		check_benchmark(int argc, char **argv, t_bench *bench);
 
 #endif

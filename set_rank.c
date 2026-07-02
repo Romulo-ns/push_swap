@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_rank.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 12:53:52 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/18 14:33:09 by willpere         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:21:25 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	set_rank(t_stack **stack)
 {
 	t_stack	*i;
 	t_stack	*j;
-	
+
 	i = *stack;
 	while (i)
 	{
