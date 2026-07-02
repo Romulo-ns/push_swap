@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disorder.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 17:10:26 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/18 14:59:25 by willpere         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:19:38 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ float	get_disorder(t_stack *stack)
 {
 	float	mistakes;
 	float	pairs;
-	t_stack *copy;	
+	t_stack	*copy;	
 
 	mistakes = 0;
 	pairs = 0;
@@ -28,7 +28,7 @@ float	get_disorder(t_stack *stack)
 			pairs++;
 			if (stack->value > copy->value)
 				mistakes++;
-			copy = copy->next;			
+			copy = copy->next;
 		}
 		stack = stack->next;
 	}

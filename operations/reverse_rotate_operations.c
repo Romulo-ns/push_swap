@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 15:25:24 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/27 15:05:35 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:15:21 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	reverse_rotate(t_stack **stack, t_bench *bench)
 	last = stack_last(*stack);
 	prev_last = last->prev;
 	prev_last->next = NULL;
-	last->prev = NULL; 
-	(*stack)->prev = last; 
+	last->prev = NULL;
+	(*stack)->prev = last;
 	last->next = *stack;
 	*stack = last;
 	if (bench)
@@ -40,7 +40,7 @@ void	rra(t_stack **a, t_bench *bench)
 
 void	rrb(t_stack **b, t_bench *bench)
 {
-	reverse_rotate(b, bench);	
+	reverse_rotate(b, bench);
 	write(1, "rrb\n", 4);
 	if (bench)
 		bench->rrb++;

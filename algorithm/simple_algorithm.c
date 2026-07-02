@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 17:24:11 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/30 20:01:15 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:13:46 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 // • Insertion sort adaptation
 
-void rotate_to_position(t_stack **stack_a, int position, t_bench *bench)
+void	rotate_to_position(t_stack **stack_a, int position, t_bench *bench)
 {
 	int	size;
 
 	size = stack_size(*stack_a);
-
 	if (position <= size / 2)
 	{
 		while (position--)
@@ -55,11 +54,12 @@ int	find_insert_position(t_stack *stack_a, int rank_b)
 	return (0);
 }
 
-void insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
+void	insertion(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 {
-	int position;
-	int	size_a = stack_size(*stack_a);
+	int	position;
+	int	size_a;
 
+	size_a = stack_size(*stack_a);
 	while (size_a > 3)
 	{
 		pb(stack_a, stack_b, bench);

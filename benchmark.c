@@ -6,23 +6,23 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 11:26:14 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/06/29 16:44:34 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:18:57 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	print_double_fd(double dis);
-void    print_benchmark_moves(t_bench *bench);
+void	print_benchmark_moves(t_bench *bench);
 
 void	bench_initiate(t_bench *bench)
 {
-    if (!bench)
+	if (!bench)
 		return ;
 	bench->active = 0;
 	bench->print_bench = 0;
 	bench->strategy = STRA_ADAPTIVE;
-    bench->total_ops = 0;
+	bench->total_ops = 0;
 	bench->pa = 0;
 	bench->pb = 0;
 	bench->rra = 0;
