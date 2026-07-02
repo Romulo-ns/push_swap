@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 14:37:06 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/27 15:20:26 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:16:54 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sa(t_stack **stack_a, t_bench *bench)
 {
 	swap(stack_a, bench);
 	write(1, "sa\n", 3);
-		if (bench)
+	if (bench)
 		bench->sa++;
 }
 
@@ -44,7 +44,7 @@ void	sb(t_stack **stack_b, t_bench *bench)
 {
 	swap(stack_b, bench);
 	write(1, "sb\n", 3);
-		if (bench)
+	if (bench)
 		bench->sb++;
 }
 
@@ -53,6 +53,6 @@ void	ss(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 	swap(stack_a, bench);
 	swap(stack_b, bench);
 	write(1, "ss\n", 3);
-		if (bench)
+	if (bench)
 		bench->ss++;
 }

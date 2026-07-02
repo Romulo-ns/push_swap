@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 13:40:56 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/18 16:17:54 by willpere         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:20:35 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ void	free_split(char **args_matrix, size_t elements)
 		free(args_matrix[i++]);
 	free(args_matrix);
 }
-
