@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_arguments.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:09 by willpere          #+#    #+#             */
-/*   Updated: 2026/06/30 19:28:52 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 20:36:50 by willpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	**parse_arguments(int argc, char **argv, t_bench *bench)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][j] == '\0')
+			return(free(args), NULL);
 		while (argv[i][j])
 			args[k++] = argv[i][j++];
 		if (i < argc - 1)
