@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   complex_algorithm.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 15:14:15 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/07/02 20:50:51 by willpere         ###   ########.fr       */
+/*   Updated: 2026/07/02 22:08:04 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	radix(t_stack **stack_a, t_stack **stack_b, t_bench *bench)
 
 	size = stack_size(*stack_a);
 	max_rank = size;
-	max_bit = 0;
+	max_bit = find_max_bit(max_rank);
 	i = 0;
 	while (i < max_bit)
 	{

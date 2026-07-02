@@ -6,7 +6,7 @@
 #    By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/05 10:41:02 by willpere          #+#    #+#              #
-#    Updated: 2026/06/30 15:23:04 by romdo-na         ###   ########.fr        #
+#    Updated: 2026/07/02 22:06:27 by romdo-na         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = push_swap.c push_swap_utils.c parsing/parse_arguments.c \
 	operations/rotate_operations.c operations/swap_operations.c \
 	disorder.c set_rank.c sort.c stack_utils.c algorithm/simple_algorithm.c \
 	benchmark.c my_lib/putstr_fd.c my_lib/putnbr_fd.c my_lib/strcmp.c \
-	algorithm/medium_algorithm.c algorithm/complex_algorithm.c
+	algorithm/medium_algorithm.c algorithm/complex_algorithm.c sort_helper.c
 		
 OBJS = $(SRCS:.c=.o)
 
