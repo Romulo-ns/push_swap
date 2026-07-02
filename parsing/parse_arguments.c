@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   parse_arguments.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:09 by willpere          #+#    #+#             */
-/*   Updated: 2026/07/02 20:47:25 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 21:37:34 by willpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	free_malloc(char **args)
+{
+	free(args);
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 char	**parse_arguments(int argc, char **argv, t_bench *bench)
 {
@@ -19,7 +26,7 @@ char	**parse_arguments(int argc, char **argv, t_bench *bench)
 	int		i;
 	int		j;
 	int		k;
-	
+
 	args = malloc(total_length(argc, argv) + 1 - bench->active);
 	if (!args)
 		return (NULL);
@@ -31,19 +38,12 @@ char	**parse_arguments(int argc, char **argv, t_bench *bench)
 	{
 		j = 0;
 		if (argv[i][j] == '\0')
-		{
-			free(args);
-			write(2,"Error\n",6);
-			exit(1);
-		}
+			free_malloc(&args);
 		while (argv[i][j])
 			args[k++] = argv[i][j++];
-		if (i < argc - 1)
+		if (++i < argc)
 			args[k++] = ' ';
-		i++;
 	}
 	args[k] = '\0';
-	matrix = ft_split(args, ' ');
-	free(args);
-	return (matrix);
+	return (matrix = ft_split(args, ' '), free(args), matrix);
 }

@@ -290,7 +290,7 @@ README.md
 | Login | Contribution |
 |--------|--------------|
 | romdo-na | Parsing, stack operations, algorithms, benchmark |
-| <partner-login> | Validation, checker, optimization, testing |
+| <willpere> | Medium and complex algorithm, parsing, fill_stack_a, stack functions |
 
 ---
 
