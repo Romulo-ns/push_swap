@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/02 21:49:19 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/07/02 21:56:22 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 22:40:03 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,26 @@ void	push_to_b_by_rank(t_stack **stack_a, t_stack **stack_b,
 	pb(stack_a, stack_b, bench);
 }
 
-void	check_benchmark(int argc, char **argv, t_bench *bench)
+void	check_strategy(int argc, char **argv, t_bench *bench)
 {
-	if (strcmp((argv)[1], BENCH_MARK) == 0)
+	if (bench && (argv[1][0] == '-' && argv[1][1] == '-'))
 	{
 		bench->active += 1;
-		bench->print_bench = 1;
-		(argv)++;
-		(argc)--;
-		if (argc < 2)
+		if (strcmp((argv)[1], STRA_SIMPLE) == 0)
+			bench->strategy = STRA_SIMPLE;
+		else if (strcmp((argv)[1], STRA_MEDIUM) == 0)
+			bench->strategy = STRA_MEDIUM;
+		else if (strcmp((argv)[1], STRA_COMPLEX) == 0)
+			bench->strategy = STRA_COMPLEX;
+		else if (strcmp((argv)[1], "") != 0
+			&& strcmp((argv)[1], STRA_ADAPTIVE) != 0)
+			bench->strategy = "Invalid";
+		else
+			bench->strategy = STRA_ADAPTIVE;
+		if (strcmp(bench->strategy, "Invalid") != 0)
 		{
-			putstr_fd("Error\n", 2);
-			exit(1);
+			(argv)++;
+			(argc)--;
 		}
 	}
 }

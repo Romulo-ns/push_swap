@@ -6,7 +6,7 @@
 /*   By: romdo-na <romdo-na@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/01 15:51:44 by romdo-na          #+#    #+#             */
-/*   Updated: 2026/07/02 21:57:13 by romdo-na         ###   ########.fr       */
+/*   Updated: 2026/07/02 22:41:12 by romdo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ void		print_benchmark_moves(t_bench *bench);
 void		select_strategy(int argc, char **argv, t_bench *bench);
 void		push_to_b_by_rank(t_stack **stack_a, t_stack **stack_b,
 				int stack_rank, t_bench *bench);
-void		check_benchmark(int argc, char **argv, t_bench *bench);
+void		check_strategy(int argc, char **argv, t_bench *bench);
 
 #endif
