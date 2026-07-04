@@ -289,8 +289,8 @@ README.md
 
 | Login | Contribution |
 |--------|--------------|
-| romdo-na | Parsing, stack operations, algorithms, benchmark |
-| <willpere> | Medium and complex algorithm, parsing, fill_stack_a, stack functions |
+| romdo-na | Parsing, stack operations, simple algorithms, benchmark, sort |
+| willpere | Medium and complex algorithm, parsing, fill_stack_a, stack functions |
 
 ---
 
