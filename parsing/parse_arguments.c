@@ -6,13 +6,13 @@
 /*   By: willpere <willpere@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 16:48:09 by willpere          #+#    #+#             */
-/*   Updated: 2026/07/02 21:37:34 by willpere         ###   ########.fr       */
+/*   Updated: 2026/07/04 10:26:35 by willpere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	free_malloc(char **args)
+void	free_malloc(char *args)
 {
 	free(args);
 	write(2, "Error\n", 6);
@@ -38,7 +38,7 @@ char	**parse_arguments(int argc, char **argv, t_bench *bench)
 	{
 		j = 0;
 		if (argv[i][j] == '\0')
-			free_malloc(&args);
+			free_malloc(args);
 		while (argv[i][j])
 			args[k++] = argv[i][j++];
 		if (++i < argc)
